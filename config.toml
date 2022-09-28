@@ -53,10 +53,7 @@ defaultContentLanguageInSubdir= true
 
  
 
-[Languages.fr]
-title = "Documentation du thème Hugo Learn"
-weight = 2
-languageName = "Français"
+ 
 
  
 
