@@ -20,7 +20,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
           find: "(?m)(\\[\\[menu\\.shortcuts\\]\\](.*\n)+?)(^weight = .*)"
-          replace: ""
+          replace: " "
           include: "config.toml"
           regex: true
 
