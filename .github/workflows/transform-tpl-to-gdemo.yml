@@ -11,3 +11,4 @@ jobs:
           find: "--MAIN-TEXT-color:#323235;"
           replace: "--MAIN-TEXT-color:#000000;"
           include: "static/css/theme-mine.css"
+          regex: false
