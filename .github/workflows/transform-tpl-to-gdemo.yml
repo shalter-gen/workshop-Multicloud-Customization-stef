@@ -5,16 +5,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Make Body Font Color Black
+      - name: Make body font color black
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
           #find: "--MAIN-TEXT-color:#323235;"
-          #replace: "--MAIN-TEXT-color:#000000;"
-          find: "--MAIN-TEXT-color:#000000;"
-          replace: "--MAIN-TEXT-color:#000001;"
-          #include: "**.css"
+          find: "--MAIN-TEXT-color:#000001;"
+          replace: "--MAIN-TEXT-color:#000000;"
           include: "static/css/theme-mine.css"
           regex: false
+      - name: Remove padding in body
+        run: |
+          grep -qxF '#body .padding {padding: 0rem 0rem;}' static/css/theme-mine.css || echo '\n\n#body .padding {padding: 0rem 0rem;}' >> static/css/theme-mine.css
+      - name: Remove menu shortcuts
+        uses: jacobtomlinson/gha-find-replace@2.0.0
+        with:
+          find: "(?m)(\\[\\[menu\\.shortcuts\\]\\](.*\n)+?)(^weight = .*)"
+          replace: ""
+          include: "config.toml"
+          regex: true
+
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
