@@ -12,6 +12,7 @@ jobs:
           #replace: "--MAIN-TEXT-color:#000000;"
           find: "323235"
           replace: "000000"
+          include: "**.css"
           #include: "static/css/theme-mine.css"
           regex: false
       - name: Push changes
