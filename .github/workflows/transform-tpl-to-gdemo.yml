@@ -17,12 +17,28 @@ jobs:
           grep -qxF '#body .padding {padding: 0rem 0rem;}' static/css/theme-mine.css || echo '
           
           #body .padding {padding: 0rem 0rem;}' >> static/css/theme-mine.css
-      - name: Remove menu shortcuts
+      - name: Remove Menu shortcuts
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
           find: "(?m)(\\[\\[menu\\.shortcuts\\]\\](.*\n)+?)(^weight = .*)"
           replace: " "
           include: "config.toml"
+          regex: true
+
+      - name: Remove Languages shortcuts
+        uses: jacobtomlinson/gha-find-replace@2.0.0
+        with:
+          find: "(?m)(\\[Languages\\](.*\n)+?)(^languageName = .*)"
+          replace: " "
+          include: "config.toml"
+          regex: true
+
+      - name: Add popups to links
+        uses: jacobtomlinson/gha-find-replace@2.0.0
+        with:
+          find: "(<a href=\"https:.+?\")(.*)"
+          replace: "$1 target=\"_blank\" $2"
+          include: "layouts/partials/menu-footer.html"
           regex: true
 
       - name: Commit & Push changes
