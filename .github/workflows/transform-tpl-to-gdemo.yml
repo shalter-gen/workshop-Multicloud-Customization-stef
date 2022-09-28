@@ -8,8 +8,10 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "--MAIN-TEXT-color:#323235;"
-          replace: "--MAIN-TEXT-color:#000000;"
+          #find: "--MAIN-TEXT-color:#323235;"
+          #replace: "--MAIN-TEXT-color:#000000;"
+          find: "323235"
+          replace: "000000"
           include: "static/css/theme-mine.css"
           regex: false
       - name: Push changes
