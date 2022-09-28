@@ -12,7 +12,7 @@ jobs:
           #replace: "--MAIN-TEXT-color:#000000;"
           find: "323235"
           replace: "000000"
-          include: "static/css/theme-mine.css"
+          #include: "static/css/theme-mine.css"
           regex: false
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
