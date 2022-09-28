@@ -8,14 +8,15 @@ jobs:
       - name: Make body font color black
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
-          #find: "--MAIN-TEXT-color:#323235;"
-          find: "--MAIN-TEXT-color:#000001;"
+          find: "--MAIN-TEXT-color:#323235;"
           replace: "--MAIN-TEXT-color:#000000;"
           include: "static/css/theme-mine.css"
           regex: false
       - name: Remove padding in body
         run: |
-          grep -qxF '#body .padding {padding: 0rem 0rem;}' static/css/theme-mine.css || echo '\n\n#body .padding {padding: 0rem 0rem;}' >> static/css/theme-mine.css
+          grep -qxF '#body .padding {padding: 0rem 0rem;}' static/css/theme-mine.css || echo '
+          
+          #body .padding {padding: 0rem 0rem;}' >> static/css/theme-mine.css
       - name: Remove menu shortcuts
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
@@ -29,9 +30,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: GHA Auto-Update Template for GTS
-
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@v0.6.0
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: ${{ github.ref }}
