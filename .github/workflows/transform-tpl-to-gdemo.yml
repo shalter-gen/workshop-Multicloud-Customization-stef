@@ -5,21 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Find and Replace
+      - name: Make Body Font Color Black
         uses: jacobtomlinson/gha-find-replace@2.0.0
-        #uses: jacobtomlinson/gha-find-replace@master
         with:
           #find: "--MAIN-TEXT-color:#323235;"
           #replace: "--MAIN-TEXT-color:#000000;"
-          find: "323235"
-          replace: "000000"
-          include: "**.css"
-          #include: "static/css/theme-mine.css"
+          find: "--MAIN-TEXT-color:#000000;"
+          replace: "--MAIN-TEXT-color:#000001;"
+          #include: "**.css"
+          include: "static/css/theme-mine.css"
           regex: false
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: GHA Auto-Update Template for GTS
 
       # - name: Push changes
       #   uses: ad-m/github-push-action@v0.6.0
