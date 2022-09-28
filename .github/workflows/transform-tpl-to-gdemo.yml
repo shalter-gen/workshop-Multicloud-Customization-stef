@@ -28,7 +28,7 @@ jobs:
       - name: Remove Languages shortcuts
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
-          find: "(?m)(\\[Languages\\](.*\n)+?)(^languageName = .*)"
+          find: "(?m)(\\[Languages(.*\n)+?)(^languageName = .*)"
           replace: " "
           include: "config.toml"
           regex: true
@@ -36,7 +36,7 @@ jobs:
       - name: Add popups to links
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
-          find: "(<a href=\"https:.+?\")(.*)"
+          find: "(href=\"https:.+?\")(.*)"
           replace: "$1 target=\"_blank\" $2"
           include: "layouts/partials/menu-footer.html"
           regex: true
