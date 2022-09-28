@@ -6,7 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
+        #uses: jacobtomlinson/gha-find-replace@v2
+        uses: jacobtomlinson/gha-find-replace@master
         with:
           #find: "--MAIN-TEXT-color:#323235;"
           #replace: "--MAIN-TEXT-color:#000000;"
