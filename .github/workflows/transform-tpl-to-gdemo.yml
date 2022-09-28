@@ -1,1 +1,13 @@
-
+name: Update body color in theme-mine.css
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "--MAIN-TEXT-color:#323235;"
+          replace: "--MAIN-TEXT-color:#000000;"
+          include: "static/css/theme-mine.css"
