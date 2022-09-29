@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v2
        
       - name: Transform Hugo Template
-        uses: shalter-gen/GHA-GTS-Update-Hugo-Template-stef2@master4
+        #uses: shalter-gen/GHA-GTS-Update-Hugo-Template-stef2@master4
+        uses: octo-org/GHA-GTS-Update-Hugo-Template-stef2/.github/workflows/transform-tpl-to-gdemo.yml
 
       # - name: Make body font color black
       #   uses: jacobtomlinson/gha-find-replace@2.0.0
