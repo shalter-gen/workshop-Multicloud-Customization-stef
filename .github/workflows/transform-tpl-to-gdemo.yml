@@ -1,5 +1,9 @@
-name: Update Template for GTS
-on: [push]
+name: Update Hugo Template for GTS
+on: 
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,6 +23,12 @@ jobs:
           grep -qxF '#body .padding {padding: 0rem 0rem;}' static/css/theme-mine.css || echo '
           
           #body .padding {padding: 0rem 0rem;}' >> static/css/theme-mine.css
+
+      - name: Remove padding in chapter
+        run: |
+          grep -qxF '#chapter {padding: 0 0 4rem 0;}' static/css/theme-mine.css || echo '
+          
+          #chapter {padding: 0 0 4rem 0;}' >> static/css/theme-mine.css
       
       - name: Remove Menu shortcuts
         uses: jacobtomlinson/gha-find-replace@2.0.0
