@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 jobs:
   template:
-    uses: shalter-gen/GHA-GTS-Update-Hugo-Template-stef2/.github/workflows/reusable-transform-tpl-to-gdemo.yml@master4
+    uses: shalter-gen/GHA-GTS-Update-Hugo-Template-stef2/.github/workflows/reusable-transform-tpl-to-gdemo.yml@main
   # build:
   #   runs-on: ubuntu-latest
   #   steps:
