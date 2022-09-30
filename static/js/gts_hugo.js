@@ -1,6 +1,5 @@
-function myFunction(x) {
-  let d = new Date();
-  alert("Current datetime: " + d + "\nYou passed in: " + x);
+function myTestFunction() {
+  alert("Current datetime: " + new Date());
 }
 
 // addEventListener support for IE8
