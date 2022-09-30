@@ -8,7 +8,7 @@ on:
 jobs:
   template:
     #uses: shalter-gen/GHA-GTS-Update-Hugo-Template-stef2/.github/workflows/reusable-transform-tpl-to-gdemo.yml@main
-    uses: GenesysTS/GTS-Reusable-Github-Actions/.github/workflows/transform-hugo-template-to-gdemo.yml@main
+    uses: GenesysTS/GTS-Reusable-Github-Actions/.github/workflows/transform-hugo-template-to-gdemo.yml@dev
   # build:
   #   runs-on: ubuntu-latest
   #   steps:
