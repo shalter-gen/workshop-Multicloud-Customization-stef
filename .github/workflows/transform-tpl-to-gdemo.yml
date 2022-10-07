@@ -12,4 +12,6 @@ jobs:
   deploy:
     needs: template
     uses: GenesysTS/GTS-Reusable-Github-Actions/.github/workflows/build-login-azure.yml@main
-    secrets: inherit
+    #secrets: inherit
+    secrets:
+      GENESYS_SAMPLES_SP: ${{secrets.GENESYS_SAMPLES_SP}}
